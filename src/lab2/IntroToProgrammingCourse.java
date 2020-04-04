@@ -8,15 +8,16 @@ import javax.swing.*;
  * @author your name goes here
  * @version 1.00
  */
-public class IntroToProgrammingCourse {
+public class IntroToProgrammingCourse implements Course {
 
     private String courseName;
     private String courseNumber;
-    private double credits;
+    private double courseCredits;
 
-    public IntroToProgrammingCourse(String courseName, String courseNumber) {
+    public IntroToProgrammingCourse(String courseName, String courseNumber, double courseCredits) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCourseCredits(courseCredits);
     }
 
     public String getCourseName() {
@@ -45,17 +46,17 @@ public class IntroToProgrammingCourse {
         this.courseNumber = courseNumber;
     }
 
-    public double getCredits() {
-        return credits;
+    public double getCourseCredits() {
+        return courseCredits;
     }
 
-    public void setCredits(double credits) {
+    public void setCourseCredits(double credits) {
         if (credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
                     "Error: credits must be in the range 0.5 to 4.0");
             System.exit(0);
         }
-        this.credits = credits;
+        this.courseCredits = credits;
     }
 
 }
